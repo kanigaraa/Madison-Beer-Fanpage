@@ -106,7 +106,7 @@ nav ul li a:hover {
   align-items: flex-start;
   justify-content: center;
   gap: 30px;
-  padding: 60px 80px;
+  padding: 120px 100px;
 }
 
 .artistProfile figure img {
@@ -120,6 +120,16 @@ nav ul li a:hover {
 }
 
 .artistInfo h2 {
+  color: #e0b676;
+  margin-bottom: 15px;
+}
+
+.content-section {
+  padding: 100px 60px;
+  text-align: center;
+}
+
+.content-section h2 {
   color: #e0b676;
   margin-bottom: 15px;
 }
