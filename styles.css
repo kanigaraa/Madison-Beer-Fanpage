@@ -1,0 +1,121 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  background-color: #111;
+  color: #fff;
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  z-index: 100;
+  padding: 5px 0;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 15px 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 10;
+  background: transparent;
+  position: relative;
+}
+
+nav ul li {
+  margin: 0 20px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover {
+  color: #e0b676;
+  text-decoration: underline;
+}
+
+.hero {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero figure {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+.hero figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(75%);
+}
+
+.hero h1 {
+  position: absolute;
+  font-size: 3rem;
+  z-index: 2;
+}
+
+.hero .overlay {
+  position: absolute;
+  bottom: 0;
+  height: 50%;
+  width: 100%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+  z-index: 1;
+}
+
+.artistProfile {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 30px;
+  padding: 60px 80px;
+}
+
+.artistProfile figure img {
+  width: 300px;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+.artistInfo {
+  max-width: 700px;
+}
+
+.artistInfo h2 {
+  color: #e0b676;
+  margin-bottom: 15px;
+}
