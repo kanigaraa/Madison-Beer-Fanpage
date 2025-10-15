@@ -266,7 +266,6 @@ nav ul li a:hover {
   color: #e0b676;
 }
 
-
 .volume-control {
   position: absolute;
   top: 15px;
@@ -321,8 +320,38 @@ nav ul li a:hover {
   appearance: none;
 }
 
-section.fansMsg {
+section.songList {
   background-color: black;
+  padding: 80px 20px;
+  text-align: center;
+  color: #fff;
+}
+
+.songList h2 {
+  color: #e0b676;
+  font-size: 1.8em;
+  margin-bottom: 40px;
+}
+
+.songTable {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  border-collapse: collapse;
+}
+
+.songTable thead {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.songTable th,
+.songTable td {
+  padding: 12px 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+section.fansMsg {
+  background-color: #111;
   color: #fff;
   text-align: center;
   padding: 60px 20px;
@@ -345,7 +374,7 @@ section.fansMsg {
 .fansMsg form {
   max-width: 480px;
   margin: 0 auto;
-  text-align: left; 
+  text-align: left;
 }
 
 .fansMsg label {
@@ -380,6 +409,12 @@ section.fansMsg {
   color: #bbb;
 }
 
+.fansMsg textarea {
+  resize: vertical;
+  min-height: 100px;
+  max-height: 200px;
+}
+
 .fansMsg button {
   display: block;
   width: 100%;
@@ -390,6 +425,7 @@ section.fansMsg {
   padding: 12px 28px;
   border-radius: 6px;
   font-size: 1em;
+  font-weight: 600;
   cursor: pointer;
   transition: background-color 0.3s, transform 0.2s;
 }
@@ -399,58 +435,79 @@ section.fansMsg {
   transform: translateY(-2px);
 }
 
+footer {
+  background: black;
+  color: #ccc;
+  text-align: center;
+  padding: 20px 10px;
+  font-size: 0.9em;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
 
-/* RESPONSIVE */
+.socialIcons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.socialIcons svg {
+  width: 24px;
+  height: 24px;
+  margin: 0 10px;
+  fill: #ccc;
+  transition: fill 0.3s;
+  cursor: pointer;
+}
+
+/* ========== RESPONSIVE DESIGN ========== */
+
+/* 1️⃣ Laptop kecil / tablet besar */
 @media (max-width: 1024px) {
   .artistProfile {
     flex-direction: column;
     align-items: center;
-    padding: 60px 40px;
+    padding: 80px 40px;
+    text-align: center;
   }
 
   .artistInfo {
-    text-align: center;
+    max-width: 600px;
   }
 
-  .artistInfo h2 {
-    font-size: 1.6em;
-  }
-
-  .artistInfo p {
-    font-size: 0.95em;
-  }
-}
-
-/* TAB */
-@media (max-width: 768px) {
-  nav ul {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  nav ul li {
-    margin: 10px;
+  .album-card {
+    width: 160px;
   }
 
   .hero h1 {
-    font-size: 2.2rem;
+    font-size: 2.5rem;
+  }
+}
+
+/* 2️⃣ Tablet / HP besar */
+@media (max-width: 768px) {
+  nav ul {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  nav ul li a {
+    font-size: 0.95em;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
     text-align: center;
-    padding: 0 10px;
+    padding: 0 20px;
   }
 
   .artistProfile {
     flex-direction: column;
-    padding: 40px 20px;
+    padding: 60px 30px;
   }
 
   .artistProfile figure img {
     width: 70%;
-    max-width: 250px;
-  }
-
-  .artistInfo {
-    width: 100%;
-    text-align: center;
+    max-width: 240px;
   }
 
   .albums-container {
@@ -458,35 +515,192 @@ section.fansMsg {
   }
 
   .album-card {
-    width: 150px;
+    width: 140px;
+  }
+
+  .song-card {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .song-card img {
+    width: 70%;
+    max-width: 220px;
+    margin-bottom: 15px;
+  }
+
+  .song-info {
+    text-align: center;
+  }
+
+  .controls {
+    justify-content: center;
   }
 }
 
-/* HANDPHONE */
+/* 3️⃣ HP kecil (maks. 480px) */
 @media (max-width: 480px) {
-  nav {
-    padding: 10px 0;
+  body {
+    font-size: 0.95em;
+    line-height: 1.6;
+    overflow-x: hidden;
   }
 
-  nav ul {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    position: static;
+  /* Navbar tetap glass dan horizontal */
+  nav {
+    padding: 10px 0;
     background: rgba(255, 255, 255, 0.08);
     backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.15);
   }
 
+  nav ul {
+    flex-direction: row; /* tetap ke samping */
+    justify-content: center;
+    flex-wrap: wrap; /* biar bisa turun baris kalau sempit */
+    gap: 8px;
+  }
+
   nav ul li {
-    margin: 10px 0;
+    margin: 4px 10px;
   }
 
   nav ul li a {
-    font-size: 1em;
-    display: block;
-    padding: 6px 0;
+    font-size: 0.9em;
+    padding: 6px;
+  }
+
+  .hero h1 {
+    font-size: 1.6rem;
+    text-align: center;
+    padding: 0 10px;
+  }
+
+  .artistProfile {
+    padding: 50px 20px;
+  }
+
+  .artistProfile figure img {
+    width: 85%;
+    max-width: 220px;
+  }
+
+  .albums-container {
+    gap: 15px;
+  }
+
+  .album-card {
+    width: 120px;
+  }
+
+  .song-card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 15px;
+    max-width: 100%;
+    padding: 15px 10px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+
+  .song-card img {
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+    object-fit: cover;
+  }
+
+  .song-card .info {
+    flex: 1;
+    text-align: left;
+  }
+
+  .song-card .info h3 {
+    font-size: 1rem;
+  }
+
+  .song-card .info p {
+    font-size: 0.85rem;
+    opacity: 0.8;
+  }
+
+  section,
+  .fansMsg,
+  .songs,
+  .albums {
+    padding: 50px 15px;
+  }
+
+  footer {
+    font-size: 0.85em;
+  }
+} /* === Responsive === */
+
+/* 📱 Mobile */
+@media (max-width: 480px) {
+  nav ul {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .song-card {
+    flex-direction: row;
+    gap: 12px;
+    padding: 15px;
+    max-width: 95%;
+  }
+
+  .song-card img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .info h3 {
+    font-size: 1rem;
+  }
+
+  .info p {
+    font-size: 0.8rem;
+  }
+
+  .song-controls input[type="range"] {
+    height: 3px;
+  }
+
+  .buttons button {
+    font-size: 1.2rem;
   }
 }
 
+/* 💻 Tablet */
+@media (min-width: 481px) and (max-width: 768px) {
+  nav ul {
+    gap: 15px;
+  }
+
+  .song-card {
+    flex-direction: row;
+    gap: 18px;
+    padding: 20px;
+    max-width: 90%;
+  }
+
+  .song-card img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .info h3 {
+    font-size: 1.1rem;
+  }
+
+  .info p {
+    font-size: 0.85rem;
+  }
+}
