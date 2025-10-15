@@ -11,6 +11,12 @@ const songs = [
     cover: "https://i.pinimg.com/1200x/c1/24/f6/c124f616e67a7b01ab9d6298beaeee03.jpg",
     src: "songs/reckless.mp3"
   },
+  {
+    title: "Make You Mine",
+    artist: "Madison Beer",
+    cover: "https://i.scdn.co/image/ab6761610000f178e0b37426761bbaa441615c5b",
+    src: "songs/makeyoumine.mp3"
+  }
 ];
 
 let currentSong = 0;
@@ -22,6 +28,11 @@ const playPauseBtn = document.getElementById("playPauseBtn");
 const nextBtn = document.getElementById("nextBtn");
 const prevBtn = document.getElementById("prevBtn");
 const volume = document.getElementById("volume");
+const progressBar = document.getElementById("progressBar");
+const currentTimeEl = document.getElementById("currentTime");
+const durationEl = document.getElementById("duration");
+
+let isPlaying = false;
 
 function loadSong(index) {
   const song = songs[index];
@@ -66,3 +77,23 @@ volume.addEventListener("input", (e) => {
 });
 
 loadSong(currentSong);
+
+audio.addEventListener("timeupdate", () => {
+  const progress = (audio.currentTime / audio.duration) * 100;
+  progressBar.value = progress || 0;
+
+  currentTimeEl.textContent = formatTime(audio.currentTime);
+  durationEl.textContent = formatTime(audio.duration);
+});
+
+progressBar.addEventListener("input", () => {
+  const seekTime = (progressBar.value / 100) * audio.duration;
+  audio.currentTime = seekTime;
+});
+
+function formatTime(sec) {
+  if (isNaN(sec)) return "0:00";
+  const minutes = Math.floor(sec / 60);
+  const seconds = Math.floor(sec % 60).toString().padStart(2, "0");
+  return `${minutes}:${seconds}`;
+}

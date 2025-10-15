@@ -19,7 +19,7 @@
           <li><a href="#about">About</a></li>
           <li><a href="#albums">Albums</a></li>
           <li><a href="#songs">Top Songs</a></li>
-          <li><a href="#fansMsg">Fans Letter</a></li>
+          <li><a href="#fansMsg">Fan Letter</a></li>
         </ul>
       </nav>
 
@@ -177,13 +177,24 @@
                 value="1"
               />
             </div>
+            <div class="progress-container">
+              <span id="currentTime">0:00</span>
+              <input
+                type="range"
+                id="progressBar"
+                value="0"
+                min="0"
+                max="100"
+              />
+              <span id="duration">3:25</span>
+            </div>
           </div>
         </div>
       </section>
 
       <!-- Fans Message Section -->
       <section class="fansMsg">
-        <h2>Fans Letter</h2>
+        <h2>Fan Letter</h2>
         <form>
           <label for="name">Your Name</label>
           <input type="text" id="name" placeholder="Enter your name" />

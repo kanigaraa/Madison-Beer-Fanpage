@@ -209,6 +209,7 @@ nav ul li a:hover {
 }
 
 .song-card {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -265,12 +266,15 @@ nav ul li a:hover {
   color: #e0b676;
 }
 
+
 .volume-control {
+  position: absolute;
+  top: 15px;
+  right: 20px;
   display: flex;
   align-items: center;
-  gap: 10px;
-  font-size: 1.2em;
-  user-select: none;
+  gap: 8px;
+  font-size: 1em;
 }
 
 .volume-control svg {
@@ -280,12 +284,41 @@ nav ul li a:hover {
 }
 
 .volume-control input {
-  width: 100px;
-  cursor: pointer;
+  width: 80px;
   accent-color: #e0b676;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 5px;
+  cursor: pointer;
   height: 5px;
+}
+.progress-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.progress-container span {
+  font-size: 0.85em;
+  color: #ccc;
+  width: 40px;
+  text-align: center;
+}
+
+#progressBar {
+  flex: 1;
+  height: 4px;
+  cursor: pointer;
+  appearance: none;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.2);
+  accent-color: #e0b676;
+}
+
+#progressBar::-webkit-slider-thumb {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #e0b676;
+  cursor: pointer;
+  appearance: none;
 }
 
 section.fansMsg {
@@ -431,44 +464,29 @@ section.fansMsg {
 
 /* HANDPHONE */
 @media (max-width: 480px) {
-  nav ul {
-    flex-direction: column;
+  nav {
     padding: 10px 0;
   }
 
-  nav ul li {
-    margin: 8px 0;
-  }
-
-  .hero h1 {
-    font-size: 1.8rem;
-  }
-
-  .artistProfile {
-    padding: 30px 15px;
-  }
-
-  .artistProfile figure img {
-    width: 90%;
-    max-width: 220px;
-  }
-
-  .albums-container {
+  nav ul {
     flex-direction: column;
     align-items: center;
-    gap: 25px;
+    justify-content: center;
+    width: 100%;
+    position: static;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
   }
 
-  .album-card {
-    width: 80%;
-    max-width: 250px;
+  nav ul li {
+    margin: 10px 0;
   }
 
-  .album-card h3 {
+  nav ul li a {
     font-size: 1em;
-  }
-
-  .album-card p {
-    font-size: 0.8em;
+    display: block;
+    padding: 6px 0;
   }
 }
+
