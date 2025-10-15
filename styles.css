@@ -97,7 +97,13 @@ nav ul li a:hover {
   bottom: 0;
   height: 50%;
   width: 100%;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+  background: linear-gradient(
+    to top,
+    #111 0%,
+    rgba(17, 17, 17, 0.85) 30%,
+    rgba(0, 0, 0, 0.3) 70%,
+    transparent 100%
+  );
   z-index: 1;
 }
 
@@ -106,7 +112,8 @@ nav ul li a:hover {
   align-items: flex-start;
   justify-content: center;
   gap: 30px;
-  padding: 120px 100px;
+  padding: 60px 100px;
+  padding-top: 120px;
 }
 
 .artistProfile figure img {
@@ -124,12 +131,265 @@ nav ul li a:hover {
   margin-bottom: 15px;
 }
 
-.content-section {
-  padding: 100px 60px;
+.albums {
+  background-color: black;
+  color: #fff;
   text-align: center;
+  padding: 60px 20px;
+  padding-bottom: 80px;
 }
 
-.content-section h2 {
+.albums h2 {
+  padding: 30px 20px 20px 20px;
+  text-align: center;
   color: #e0b676;
+  font-size: 1.8em;
+  margin-bottom: 20px;
+}
+
+.albums-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.album-card {
+  width: 180px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.album-card a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.album-card img {
+  width: 100%;
+  border-radius: 10px;
+  display: block;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.album-card img:hover {
+  box-shadow: 0 1px 25px rgba(207, 164, 82, 0.3);
+}
+
+.album-card h3 {
+  font-size: 1em;
+  margin-top: 10px;
+}
+
+.album-card p {
+  font-size: 0.8em;
+  color: #ccc;
+}
+
+.album-card:hover {
+  transform: translateY(-8px);
+}
+
+.songs {
+  background-color: #111;
+  padding: 80px 20px;
+  text-align: center;
+  color: #fff;
+}
+
+.songs h2 {
+  color: #e0b676;
+  font-size: 1.8em;
+  margin-bottom: 40px;
+}
+
+.songs-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.song-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 15px;
+  padding: 25px;
+  max-width: 600px;
+  margin: 0 auto;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 4px 10px rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(12px);
+  gap: 25px;
+}
+
+.song-card img {
+  width: 180px;
+  border-radius: 10px;
+}
+
+.song-info {
+  text-align: left;
+  flex: 1;
+}
+
+.song-info h3 {
+  color: #e0b676;
+  margin: 0 0 5px 0;
+}
+
+.song-info p {
+  color: #ccc;
   margin-bottom: 15px;
+}
+
+.controls {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.controls button {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.5em;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.controls button:hover {
+  color: #e0b676;
+}
+
+.volume-control {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.2em;
+  user-select: none;
+}
+
+.volume-control svg {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.volume-control input {
+  width: 100px;
+  cursor: pointer;
+  accent-color: #e0b676;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+  height: 5px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .artistProfile {
+    flex-direction: column;
+    align-items: center;
+    padding: 60px 40px;
+  }
+
+  .artistInfo {
+    text-align: center;
+  }
+
+  .artistInfo h2 {
+    font-size: 1.6em;
+  }
+
+  .artistInfo p {
+    font-size: 0.95em;
+  }
+}
+
+/* TAB */
+@media (max-width: 768px) {
+  nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  nav ul li {
+    margin: 10px;
+  }
+
+  .hero h1 {
+    font-size: 2.2rem;
+    text-align: center;
+    padding: 0 10px;
+  }
+
+  .artistProfile {
+    flex-direction: column;
+    padding: 40px 20px;
+  }
+
+  .artistProfile figure img {
+    width: 70%;
+    max-width: 250px;
+  }
+
+  .artistInfo {
+    width: 100%;
+    text-align: center;
+  }
+
+  .albums-container {
+    gap: 20px;
+  }
+
+  .album-card {
+    width: 150px;
+  }
+}
+
+/* HANDPHONE */
+@media (max-width: 480px) {
+  nav ul {
+    flex-direction: column;
+    padding: 10px 0;
+  }
+
+  nav ul li {
+    margin: 8px 0;
+  }
+
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .artistProfile {
+    padding: 30px 15px;
+  }
+
+  .artistProfile figure img {
+    width: 90%;
+    max-width: 220px;
+  }
+
+  .albums-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+  }
+
+  .album-card {
+    width: 80%;
+    max-width: 250px;
+  }
+
+  .album-card h3 {
+    font-size: 1em;
+  }
+
+  .album-card p {
+    font-size: 0.8em;
+  }
 }

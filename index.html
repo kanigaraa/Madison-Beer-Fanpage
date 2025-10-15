@@ -18,9 +18,9 @@
         <ul>
           <li><a href="#home">Home</a></li>
           <li><a href="#about">About</a></li>
-          <li><a href="#music">Album</a></li>
-          <li><a href="#tour">Popular</a></li>
-          <li><a href="#contact">Fans Letter</a></li>
+          <li><a href="#albums">Albums</a></li>
+          <li><a href="#songs">Top Songs</a></li>
+          <li><a href="#fansMsg">Fans Letter</a></li>
         </ul>
       </nav>
 
@@ -28,7 +28,7 @@
         <figure>
           <img
             src="https://i.pinimg.com/1200x/7f/a1/b4/7fa1b4c4118e71084c95f522df74c74b.jpg"
-            alt="Madison Beer hero image"
+            alt="Madison Beer Hero Image"
           />
         </figure>
         <h1>Madison Beer</h1>
@@ -40,65 +40,150 @@
       <article class="artistProfile" id="about">
         <figure>
           <img
-            src="https://i.pinimg.com/736x/61/28/30/6128305286cab61280fab25d175e6e77.jpg"
-            alt="Madison Beer portrait"
+            src="https://i.pinimg.com/736x/3e/24/af/3e24afd0d2c2deb2fd6e14462fd94d53.jpg"
+            alt="Madison Beer"
           />
         </figure>
 
         <section class="artistInfo">
           <h2>About</h2>
           <p>
-            <b>Madison Elle Beer</b> (March 5, 1999) is an American singer and
-            actress. She gained fame in 2012 when Justin Bieber tweeted a link
-            to a video of her singing. She released her debut single "Melodies"
-            in 2013, and her debut EP, "As She Pleases," in 2018. Beer has since
-            released several successful singles and has built a large following
-            on social media.
+            <b>Madison Elle Beer</b> is an American singer and songwriter who
+            first gained attention as a teenager after her singing videos went
+            viral online. Her distinctive voice and pop-R&B style quickly
+            captured public interest.
           </p>
-          <br>
+          <br />
           <p>
-            Beer is known for her powerful voice and her ability to blend
-            different genres of music, including pop, R&B, and electronic dance
-            music. She has been praised for her vocal range and her ability to
-            connect with her audience through her music.
+            She has released several notable works such as As She Pleases and
+            Life Support, showcasing emotional depth and maturity in her music.
+            Her lyrics often reflect personal experiences and honest feelings.
           </p>
-          <br>
+          <br />
           <p>
-            In addition to her music career, Beer has also acted in several
-            films and television shows. She made her acting debut in the 2015
-            film "Louder Than Words" and has since appeared in the TV series
-            "Todrick" and "The Voice."
+            Beyond her music, Madison is also recognized for her influence in
+            fashion and social media, frequently sharing her style and life with
+            fans around the world.
           </p>
-          <br>
+          <br />
           <p>
-            Beer is also known for her fashion sense and has been featured in
-            several fashion magazines. She has collaborated with several fashion
-            brands and has been praised for her unique style.
-          </p>
-          <br>
-          <p>
-            Overall, Madison Beer is a talented singer and actress who has made
-            a name for herself in the entertainment industry. With her powerful
-            voice and unique style, she is sure to continue to be a force to be
-            reckoned with in the years to come.
+            With her powerful vocals and unique artistic vision, Madison Beer
+            continues to grow as one of the most influential young artists in
+            modern music.
           </p>
         </section>
       </article>
 
-      <section id="music" class="content-section">
-        <h2>Album</h2>
-        <p>Daftar album Madison Beer...</p>
+      <section id="albums" class="albums">
+        <h2>Albums</h2>
+        <div class="albums-container">
+          <div class="album-card">
+            <a
+              href="https://open.spotify.com/album/1TKYO9znkrY14VayHze05r?si=e1IT6-TdRSy4Ghpvcwlp2A"
+              target="_blank"
+            >
+              <img
+                src="https://m.media-amazon.com/images/I/61NT+j34iKS._UF1000,1000_QL80_.jpg"
+              />
+              <h3>Life Support</h3>
+              <p>2021 • Album</p>
+            </a>
+          </div>
+          <div class="album-card">
+            <a
+              href="https://open.spotify.com/album/0Q0rJ81u7O4EFCpqkcwJJ2?si=2ygfYjTfS9eCoWg3jHYn4Q"
+              target="_blank"
+            >
+              <img
+                src="https://i.scdn.co/image/ab67616d0000b2734cfec4226766102300244b83"
+              />
+              <h3>Silence Between Songs</h3>
+              <p>2023 • Album</p>
+            </a>
+          </div>
+          <div class="album-card">
+            <a
+              href="https://open.spotify.com/album/3PYA0lKJUKoKhYkVSLDyDb?si=FJ6l5tGBQC-1bkHHLWjniw"
+              target="_blank"
+            >
+              <img
+                src="https://i.scdn.co/image/ab67616d0000b273adc16f7df1d7a810a859cd86"
+              />
+              <h3>As She Pleases</h3>
+              <p>2018 • Album</p>
+            </a>
+          </div>
+        </div>
       </section>
 
-      <section id="tour" class="content-section">
-        <h2>Popular</h2>
-        <p>Lagu-lagu populer Madison Beer...</p>
+      <section class="songs" id="songs">
+        <h2>Top Songs</h2>
+
+        <div class="song-card">
+          <img id="cover" src="" alt="Album Cover" />
+
+          <div class="song-info">
+            <h3 id="title"></h3>
+            <p id="artist"></p>
+
+            <audio id="audio"></audio>
+
+            <div class="controls">
+              <button id="prevBtn">⏮</button>
+              <button id="playPauseBtn">▶</button>
+              <button id="nextBtn">⏭</button>
+            </div>
+
+            <div class="volume-control">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g
+                  id="SVGRepo_tracerCarrier"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></g>
+                <g id="SVGRepo_iconCarrier">
+                  <path
+                    d="M1.53479 10.9714C1.60847 9.76255 1.64531 9.15814 1.95854 8.57679C2.24473 8.04563 2.7923 7.53042 3.33988 7.27707C3.93921 6.99979 4.62617 6.99979 6.00008 6.99979C6.51215 6.99979 6.76819 6.99979 7.0162 6.95791C7.26138 6.9165 7.50046 6.84478 7.72795 6.74438C7.95806 6.64283 8.17181 6.50189 8.59932 6.22002L8.81825 6.07566C11.3612 4.39898 12.6327 3.56063 13.7001 3.92487C13.9047 3.9947 14.1028 4.09551 14.2797 4.21984C15.2024 4.86829 15.2725 6.37699 15.4127 9.3944C15.4646 10.5117 15.5 11.4679 15.5 11.9998C15.5 12.5317 15.4646 13.4879 15.4127 14.6052C15.2725 17.6226 15.2024 19.1313 14.2797 19.7797C14.1028 19.9041 13.9047 20.0049 13.7001 20.0747C12.6327 20.4389 11.3612 19.6006 8.81825 17.9239L8.59932 17.7796C8.17181 17.4977 7.95806 17.3567 7.72795 17.2552C7.50046 17.1548 7.26138 17.0831 7.0162 17.0417C6.76819 16.9998 6.51215 16.9998 6.00008 16.9998C4.62617 16.9998 3.93921 16.9998 3.33988 16.7225C2.7923 16.4692 2.24473 15.9539 1.95854 15.4228C1.64531 14.8414 1.60847 14.237 1.53479 13.0282C1.51299 12.6706 1.5 12.3222 1.5 11.9998C1.5 11.6774 1.51299 11.329 1.53479 10.9714Z"
+                    stroke="#ffffff"
+                    stroke-width="1.5"
+                  ></path>
+                  <path
+                    d="M20 6C20 6 21.5 7.8 21.5 12C21.5 16.2 20 18 20 18"
+                    stroke="#ffffff"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                  ></path>
+                  <path
+                    d="M18 9C18 9 18.5 9.9 18.5 12C18.5 14.1 18 15 18 15"
+                    stroke="#ffffff"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                  ></path>
+                </g>
+              </svg>
+              <input
+                type="range"
+                id="volume"
+                min="0"
+                max="1"
+                step="0.01"
+                value="1"
+              />
+            </div>
+          </div>
+        </div>
       </section>
 
-      <section id="contact" class="content-section">
-        <h2>Fans Letter</h2>
-        <p>Hubungi atau kirim surat untuk fans...</p>
+      <section id="fansMsg" class="fansMsg">
+        <h2>Fans Message</h2>
+        <p>Coming soon...</p>
       </section>
     </main>
+    <script src="script.js"></script>
   </body>
 </html>
