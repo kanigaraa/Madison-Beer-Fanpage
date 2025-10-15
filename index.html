@@ -11,7 +11,6 @@
     />
     <link rel="icon" href="mb_icon.jpg" />
   </head>
-
   <body>
     <header>
       <nav>
@@ -37,6 +36,7 @@
     </header>
 
     <main>
+      <!-- About Section -->
       <article class="artistProfile" id="about">
         <figure>
           <img
@@ -74,6 +74,7 @@
         </section>
       </article>
 
+      <!-- Albums Section -->
       <section id="albums" class="albums">
         <h2>Albums</h2>
         <div class="albums-container">
@@ -116,6 +117,7 @@
         </div>
       </section>
 
+      <!-- Songs Section -->
       <section class="songs" id="songs">
         <h2>Top Songs</h2>
 
@@ -179,9 +181,21 @@
         </div>
       </section>
 
-      <section id="fansMsg" class="fansMsg">
-        <h2>Fans Message</h2>
-        <p>Coming soon...</p>
+      <!-- Fans Message Section -->
+      <section class="fansMsg">
+        <h2>Fans Letter</h2>
+        <form>
+          <label for="name">Your Name</label>
+          <input type="text" id="name" placeholder="Enter your name" />
+
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="Enter your email" />
+
+          <label for="message">Message</label>
+          <textarea id="message" placeholder="Write your message..."></textarea>
+
+          <button type="submit">Send</button>
+        </form>
       </section>
     </main>
     <script src="script.js"></script>

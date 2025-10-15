@@ -216,7 +216,7 @@ nav ul li a:hover {
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-radius: 15px;
-  padding: 25px;
+  padding: 20px 30px;
   max-width: 600px;
   margin: 0 auto;
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -287,6 +287,85 @@ nav ul li a:hover {
   border-radius: 5px;
   height: 5px;
 }
+
+section.fansMsg {
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  padding: 60px 20px;
+  padding-bottom: 80px;
+}
+
+.fansMsg {
+  background-color: #111;
+  padding: 80px 20px;
+  text-align: center;
+  color: #fff;
+}
+
+.fansMsg h2 {
+  color: #e0b676;
+  font-size: 1.8em;
+  margin-bottom: 30px;
+}
+
+.fansMsg form {
+  max-width: 480px;
+  margin: 0 auto;
+  text-align: left; 
+}
+
+.fansMsg label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #e0b676;
+}
+
+.fansMsg input,
+.fansMsg textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-size: 1em;
+  transition: background 0.3s, box-shadow 0.3s;
+}
+
+.fansMsg input:focus,
+.fansMsg textarea:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 6px rgba(224, 182, 118, 0.3);
+}
+
+.fansMsg input::placeholder,
+.fansMsg textarea::placeholder {
+  color: #bbb;
+}
+
+.fansMsg button {
+  display: block;
+  width: 100%;
+  margin: 10px auto 0 auto;
+  background-color: #e0b676;
+  color: #111;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 6px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.fansMsg button:hover {
+  background-color: #cfa15e;
+  transform: translateY(-2px);
+}
+
 
 /* RESPONSIVE */
 @media (max-width: 1024px) {
