@@ -31,6 +31,7 @@ nav {
   border-bottom: 1px solid rgba(255, 255, 255, 0.15);
   z-index: 100;
   padding: 5px 0;
+  width: calc(100% - 16px);
 }
 
 nav ul {
@@ -38,7 +39,6 @@ nav ul {
   justify-content: center;
   list-style: none;
   padding: 15px 0;
-  position: fixed;
   width: 100%;
   top: 0;
   z-index: 10;
@@ -129,6 +129,16 @@ nav ul li a:hover {
 .artistInfo h2 {
   color: #e0b676;
   margin-bottom: 15px;
+}
+
+.artistInfo h3 {
+  color: #e0b676;
+}
+
+.artistInfo ul {
+  padding-left: 1.2em;
+  margin-left: 0;
+  list-style-position: outside;
 }
 
 .albums {
@@ -435,8 +445,61 @@ section.fansMsg {
   transform: translateY(-2px);
 }
 
+.similiar {
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  padding: 60px 20px;
+  padding-bottom: 80px;
+}
+
+.similiar h2 {
+  padding: 30px 20px 20px 20px;
+  text-align: center;
+  color: #e0b676;
+  font-size: 1.8em;
+  margin-bottom: 20px;
+}
+
+.similiar-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.similiar-card {
+  width: 180px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.similiar-card a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.similiar-card img {
+  width: 100%;
+  border-radius: 10px;
+  display: block;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.similiar-card img:hover {
+  box-shadow: 0 1px 25px rgba(207, 164, 82, 0.3);
+}
+
+.similiar-card h3 {
+  font-size: 1em;
+  margin-top: 10px;
+}
+
+.similiar-card:hover {
+  transform: translateY(-8px);
+}
+
 footer {
-  background: black;
+  background: #111;
   color: #ccc;
   text-align: center;
   padding: 20px 10px;
@@ -447,71 +510,45 @@ footer {
 .socialIcons {
   display: flex;
   justify-content: center;
-  gap: 10px;
+  gap: 8px;
 }
 
 .socialIcons svg {
   width: 24px;
   height: 24px;
-  margin: 0 10px;
-  fill: #ccc;
-  transition: fill 0.3s;
+  margin: 0 8px;
   cursor: pointer;
 }
 
-/* ========== RESPONSIVE DESIGN ========== */
+/* ========== Responsive ========== */
 
-/* 1️⃣ Laptop kecil / tablet besar */
-@media (max-width: 1024px) {
-  .artistProfile {
-    flex-direction: column;
-    align-items: center;
-    padding: 80px 40px;
-    text-align: center;
+/* Tablet & HP besar */
+@media (min-width: 481px) and (max-width: 768px) {
+  nav {
+    padding: 10px 0;
   }
 
-  .artistInfo {
-    max-width: 600px;
-  }
-
-  .album-card {
-    width: 160px;
-  }
-
-  .hero h1 {
-    font-size: 2.5rem;
-  }
-}
-
-/* 2️⃣ Tablet / HP besar */
-@media (max-width: 768px) {
   nav ul {
-    flex-wrap: wrap;
-    gap: 10px;
-  }
-
-  nav ul li a {
-    font-size: 0.95em;
+    gap: 15px;
   }
 
   .hero h1 {
     font-size: 2rem;
-    text-align: center;
     padding: 0 20px;
+    text-align: center;
   }
 
   .artistProfile {
     flex-direction: column;
-    padding: 60px 30px;
+    align-items: center;
+    text-align: center;
+    padding: 80px 40px 60px;
+    gap: 25px;
   }
 
   .artistProfile figure img {
     width: 70%;
-    max-width: 240px;
-  }
-
-  .albums-container {
-    gap: 20px;
+    max-width: 250px;
   }
 
   .album-card {
@@ -521,13 +558,17 @@ footer {
   .song-card {
     flex-direction: column;
     align-items: center;
-    padding: 20px;
+    justify-content: center;
+    width: 85%;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 25px;
+    border-radius: 15px;
   }
 
   .song-card img {
-    width: 70%;
-    max-width: 220px;
-    margin-bottom: 15px;
+    width: 130px;
+    margin-bottom: 10px;
   }
 
   .song-info {
@@ -535,172 +576,119 @@ footer {
   }
 
   .controls {
+    display: flex;
     justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-top: 12px;
+  }
+
+  .controls button {
+    font-size: 1.4em;
+  }
+
+  .volume-control {
+    top: 12px;
+    right: 18px;
+    gap: 6px;
+    transform: scale(0.9);
+  }
+
+  .volume-control svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .volume-control input {
+    width: 70px;
+    height: 5px;
+  }
+
+  footer {
+    font-size: 0.85em;
   }
 }
 
-/* 3️⃣ HP kecil (maks. 480px) */
+/* HP kecil (≤480px) */
 @media (max-width: 480px) {
-  body {
-    font-size: 0.95em;
-    line-height: 1.6;
-    overflow-x: hidden;
-  }
-
-  /* Navbar tetap glass dan horizontal */
   nav {
-    padding: 10px 0;
-    background: rgba(255, 255, 255, 0.08);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 8px 0;
   }
 
   nav ul {
-    flex-direction: row; /* tetap ke samping */
-    justify-content: center;
-    flex-wrap: wrap; /* biar bisa turun baris kalau sempit */
-    gap: 8px;
-  }
-
-  nav ul li {
-    margin: 4px 10px;
-  }
-
-  nav ul li a {
-    font-size: 0.9em;
-    padding: 6px;
+    gap: 10px;
   }
 
   .hero h1 {
     font-size: 1.6rem;
-    text-align: center;
     padding: 0 10px;
   }
 
   .artistProfile {
-    padding: 50px 20px;
+    padding: 70px 20px 50px;
   }
 
   .artistProfile figure img {
     width: 85%;
-    max-width: 220px;
-  }
-
-  .albums-container {
-    gap: 15px;
+    max-width: 200px;
   }
 
   .album-card {
     width: 120px;
   }
 
-  .song-card {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 15px;
-    max-width: 100%;
-    padding: 15px 10px;
-    border-radius: 12px;
-    background: rgba(255, 255, 255, 0.06);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+  .song-card h3 {
+    text-align: center;
   }
 
-  .song-card img {
-    width: 80px;
-    height: 80px;
-    border-radius: 10px;
-    object-fit: cover;
-  }
-
-  .song-card .info {
-    flex: 1;
-    text-align: left;
-  }
-
-  .song-card .info h3 {
-    font-size: 1rem;
-  }
-
-  .song-card .info p {
-    font-size: 0.85rem;
-    opacity: 0.8;
-  }
-
-  section,
-  .fansMsg,
-  .songs,
-  .albums {
-    padding: 50px 15px;
-  }
-
-  footer {
-    font-size: 0.85em;
-  }
-} /* === Responsive === */
-
-/* 📱 Mobile */
-@media (max-width: 480px) {
-  nav ul {
-    flex-wrap: wrap;
-    gap: 10px;
+  .song-card p {
+    text-align: center;
   }
 
   .song-card {
-    flex-direction: row;
-    gap: 12px;
-    padding: 15px;
-    max-width: 95%;
-  }
-
-  .song-card img {
-    width: 80px;
-    height: 80px;
-  }
-
-  .info h3 {
-    font-size: 1rem;
-  }
-
-  .info p {
-    font-size: 0.8rem;
-  }
-
-  .song-controls input[type="range"] {
-    height: 3px;
-  }
-
-  .buttons button {
-    font-size: 1.2rem;
-  }
-}
-
-/* 💻 Tablet */
-@media (min-width: 481px) and (max-width: 768px) {
-  nav ul {
-    gap: 15px;
-  }
-
-  .song-card {
-    flex-direction: row;
-    gap: 18px;
+    flex-direction: column;
     padding: 20px;
-    max-width: 90%;
+    width: 80%;
   }
 
   .song-card img {
     width: 100px;
-    height: 100px;
   }
 
-  .info h3 {
-    font-size: 1.1rem;
+  .controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 10px;
   }
 
-  .info p {
-    font-size: 0.85rem;
+  .controls button {
+    font-size: 1.3em;
+  }
+
+  .song-info {
+    text-align: center;
+  }
+
+  .volume-control {
+    top: 10px;
+    right: 12px;
+    gap: 5px;
+    transform: scale(0.85);
+  }
+
+  .volume-control svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .volume-control input {
+    width: 60px;
+    height: 4px;
+  }
+
+  footer {
+    font-size: 0.8em;
   }
 }
